@@ -1,0 +1,37 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * main.scss
+ *
+ * Cizi - Clean And Minimalistic Personel Blog Theme
+ *
+ * @author  Enes Erdogan
+ * @github  github.com/eneserdogan/cizi
+ * @mail    eneserdgnn@yandex.com
+ *
+ * This is a project that creates wonders.
+ *
+ * ----------------------------------------------------------------------------------------
+ */
+
+/** VENDOR **/
+@import "vendor/bourbon/bourbon";
+@import "vendor/pace/pace";
+@import "vendor/prism/prism";
+
+/** HELPERS **/
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/webfonts";
+
+/** BASE **/
+@import "base/normalize";
+@import "base/typography";
+
+/** LAYOUT **/
+@import "layout/main";
+@import "layout/header";
+@import "layout/footer";
+
+/** 3RD **/
+@import "pages/home";
+@import "pages/article";

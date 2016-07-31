@@ -1,0 +1,23 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Mixins Styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+@mixin dashed(){
+  display: block;
+  position: relative;
+  border: 0;
+  font-family: $georgia;
+  font-style: normal;
+  @include margin(15px null 30px null);
+  &:before{
+    color: rgba(0,0,0,0.5);
+    content: "...";
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1.2em;
+    display: inline-block;
+    @include margin(null null null 1.2em);
+  }
+}
