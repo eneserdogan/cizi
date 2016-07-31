@@ -1,9 +1,8 @@
 
-<img src="cizi-cover.png" width="350">
-
 # Cizi
 Clean And Minimalistic Personel Blog Theme. Jekyll version coming soon !
 
+<img src="cizi-cover.png" width="450">
 
 ### Some Features
 - Lightweight / easy on customize
