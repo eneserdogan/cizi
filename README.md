@@ -1,6 +1,6 @@
 
-<img src="http://erdogan.pw/cizi/cizi-logo.png" width="400">
-# Cizi
+<img src="cizi-cover.png" width="400">
+# Cizi <a href="https://eneserdogan.github.io/cizi/builds/"><img src="https://img.shields.io/badge/live-preview-lightgrey.svg" /></a>
 Clean And Minimalistic Personel Blog Theme. Jekyll version coming soon !
 
 ### Some Features
