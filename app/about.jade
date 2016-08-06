@@ -1,0 +1,27 @@
+include views/templates/helpers/_mixin
+doctype
+html(lang="en")
+    include views/templates/partials/_head
+    body
+        // container
+        .container
+            // header
+            include views/templates/partials/_header
+            // content
+            .content.main
+                // main-area
+                .main-area
+                    // main
+                    main.home
+                        // content-header
+                        header.content-header
+                            h1.content-title Hi, I'm John Doe
+                            span.dashed
+                        // content-profile
+                        section.content-profile
+                            // page-wrapper
+                            .page-wrapper
+                                p   Hi I'm John, Nullam vestibulum diam lorem, a lacinia lacus scelerisque eu. Donec venenatis pulvinar sem, et semper tellus. Pellentesque euismod elementum feugiat. Maecenas eget mauris eu lectus ultricies vehicula. Aenean viverra turpis ut sapien placerat, feugiat fringilla tortor rhoncus. 
+                                p   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique perspiciatis, maiores autem id odio, tenetur iure voluptatem, repellendus vel et eveniet veritatis error nemo nulla quo tempore possimus qui minima!  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil debitis id ex explicabo, quaerat neque ipsa nostrum repellat possimus rem optio nisi dolorem dicta mollitia iste ducimus delectus non quos.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non fuga porro vero aut eaque, in assumenda vitae quo doloremque. Explicabo iusto eveniet eos quod ad doloremque, ex totam dicta cupiditate!
+            // footer
+            include views/templates/partials/_footer

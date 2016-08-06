@@ -1,0 +1,42 @@
+header.main-header#main-header
+    // header-nav--check
+    input(type="checkbox" id="headerNavCheck" class="header-nav--check")
+    // header-title
+    h1.header-title
+        a(href="index.html") John Doe
+    // header-nav
+    nav.header-nav
+      ul
+        li 
+          a(href="category.html") Category
+        li 
+          a(href="about.html") About
+        li 
+          a(href="contact.html") Contact
+    // header-navicon
+    .header-navicon
+      label(for="headerNavCheck" class="hamburger hamburger--emphatic")
+        span.hamburger-box.test-box
+          span.hamburger-inner
+    // header-search
+    .header-search
+      label(for="headerSearchCheck")
+        span.cz-search
+    // clear
+    .clear
+// haeder-search--check
+input(type="checkbox" id="headerSearchCheck" class="header-search--check")
+// header-search--form
+.header-saerch--form
+  form(action="search.html" method="POST")
+    // form--wrapper
+    .form--wrapper
+      span.cz-search
+      input(placeholder="Text your here" type="text" autofocus)
+      label(for="headerSearchCheck" class="hamburger hamburger--vortex is-active")
+        span.hamburger-box.test-box
+          span.hamburger-inner
+    // clear
+    .clear
+// header-search--overlay
+.header-search--overlay

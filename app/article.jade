@@ -1,0 +1,284 @@
+include views/templates/helpers/_mixin
+doctype
+html(lang="en")
+    include views/templates/partials/_head
+    body
+        // container
+        .container
+            // header
+            include views/templates/partials/_header
+            // content
+            .content
+                // main-area
+                .main-area
+                    // main
+                    main.article
+                        article.post
+                            // content-header
+                            header.content-header
+                                h1.content-title Getting Started with Gulp
+                                span.dashed
+                            // content-post
+                            .content-post
+                                p The good news is that it is actually pretty simple! I have created five basic steps that walk you through all of the intimidating stuff and introduce you to the core ideas that you will need to know to start using gulp. Let's get started!
+                                .post-picture
+                                    img(src="assets/img/gulp-article.png" alt="gulp")
+                                    .picture-desc
+                                      | #[strong Gulp] 
+                                      p Automate and enhance your workflow
+                                h1 Step One - Install Node
+                                p  First - we need our most important requirement, Node. To install Node - simply visit #[a(href="http://nodejs.org") nodejs.org] and then click that big green “Install” button. Once your download completes, run that application and you should be all ready to go. The Node installer also includes npm, which we will come back to a little later.
+                                h1 Step Two - Get To Know Your Command Line
+                                p Now, you may not be very familiar with your command-line interface (Terminal for OSX, Command Prompt for Windows) but you should be! It may seem intimidating at first, but once you get the hang of it you will have the ability to run many different command line applications such as #[a(href="http://sass-lang.com") Sass], #[a(href="http://yeoman.io/") Yeoman] and #[a(href="https://git-scm.com/") Git]. All of which are very useful tools that your workflow could benefit from!
+                                blockquote
+                                    p If you are familiar with your command-line interface, then feel free to skip to step four.
+                                p As a quick example, open up your command line and we will throw a couple commands at it to ensure that Node is properly installed.
+                                pre
+                                    code.language-javascript
+                                        | node -v
+                                p Type that and then hit enter and you should get a response on the next line with the version number of Node that you have installed. Now, let’s do the same for npm.
+                                pre
+                                    code.language-javascript
+                                        | npm -v
+                                p Again, this should return the version number on the next line.
+                                p If you didn’t get a response, then it may mean that Node didn’t install correctly or you may need to restart your command line application. If this still isn’t working after restarting, then simply jump back up the top and try the first step again.
+                                h1 Step Three - Navigate To Your Project Directory
+                                p Now that we have met our command-line interface and know how to communicate with it, our next step will be navigating it. Luckily, it only takes two commands to change directories and take a look at what is inside them. These commands are #[mark ls] (or #[mark dir], for Windows) to list what is in a directory and #[mark cd] to change directories.
+                                blockquote
+                                    p I suggest that you spend some time playing with these commands. Get used to your file system and be aware of where everything is located. Don’t rush through this - it will save you a lot of headache later!
+                                p Once you are comfortable with the #[mark ls] and #[mark cd] commands, we need to navigate to our project folder. This will likely be different for each person, but as an example this is what I would type to navigate to my local project:
+                                pre
+                                    code.language-bash
+                                       | cd /Applications/XAMPP/xamppfiles/htdocs/my-project
+                                blockquote
+                                    p It is important to note that I am working on OS X. The file system on Windows is much different so, while this example may be similar, it wont translate directly to Windows.
+                                p Once you have made it to your project directory - let's run a quick npm command to initialize our #[mark package.json] file.
+                                pre
+                                    code.language-javascript
+                                       | npm init
+                                p This will prompt us to answer a few questions about our project. Once completed, it will create a file in the root directory of the project called #[mark package.json] which will provide information about the project and its dependencies. Now, we’re ready to install gulp.
+                                h1 Step Four - Installing gulp
+                                p You’ve met your command-line and you know how to talk to it - you even know your way around your file system. Now, let’s meet npm and install gulp!
+                                p #[mark npm] is a package manager for Node that will enable you to install additional modules for use in your projects from the command line. To learn more about npm, take a moment and visit the #[a(href="http://npmjs.org") npm website] to browse and search through all of the available packages. As a small exercise, search for gulp and take a look around.
+                                p When you're ready to install gulp, jump back to your command-line application and type:
+                                pre
+                                    code.language-javascript
+                                        | npm install -g gulp
+                                p Let’s take a moment to break this down.
+                                ul
+                                  li #[mark npm] is the application we are using to install our package.
+                                  li We are running the #[mark install] command on that application.
+                                  li The #[mark -g] is an optional flag used to signify that we want to install this package globally so that any project can use it.
+                                  li And finally, #[mark gulp] is the name of the package we would like to install.
+                                blockquote
+                                    p If you are getting #[mark EACCES] errors when installing modules you don't have permission to write to the directory that npm is using to store them. You can prepend those commands with #[mark sudo], but it is not advised as it can lead to more problematic issues later. For more information on how to resolve this, check out #[a(href="https://docs.npmjs.com/getting-started/fixing-npm-permissions") Fixing npm Permissions.]
+                                p Once that has completed check your command-line to ensure that there are no error messages. If there are none to be seen, then congratulations! You just installed gulp! Just to double check, let’s refer back to our versioning commands we used above for Node and npm.
+                                pre
+                                    code.language-javascript
+                                        | gulp -v
+                                p Like before, this should return the version number on the next line of your command-line.Next, we also need to install gulp locally.
+                                pre
+                                    code.language-javascript
+                                        | npm install --save-dev gulp
+                                p The only thing different here is we used the --save-dev flag which instructs npm to add the dependency to our devDependencies list in our package.json file that we created earlier.
+                                p Dependencies help us organize which packages are needed in our development and production environments as others contribute to or use our project. If you would like to read more about dependencies be sure to check out the package.json documentation.
+                                p Now that gulp is installed, the next step is setting up our gulpfile. We’re almost done!
+                                h1 Step Five - Setting Up Our Gulpfile & Running Gulp
+                                p Once gulp is installed we have to give it some instruction so it knows what tasks for perform for us. But, first, we need to figure out exactly what tasks we need to run in our project
+                                p In our Exciting Non-Generic Real World Scenario®, our boss has assigned us with the following tasks:
+                                ul
+                                    li Lint our JavaScript. (Seriously. Do it.)
+                                    li Compile our Sass files. (Browsers can’t read that stuff...)
+                                    li Concatenate our JavaScript. (Reduce HTTP Requests!)
+                                    li Minify and rename concatenated files. (Every little bit counts!)
+                                p I’m imagining our supervisor as the impatient, somewhat frightening type who eats interns when they don't do what the boss wants. So, let’s get right to it before our lunch companion gets eaten.
+                                h1 Install Required Plugins
+                                pre
+                                    code.language-javascript
+                                        | npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
+                                p This will install all of the plugins we will need and add them to our devDependencies in our package.json file like we did when we installed gulp
+                                blockquote
+                                    p If you are getting permissions errors installing these plugins you may have some issues with the permissions in your local project directory. You can prepend those commands with sudo, but it is not advised as it can lead to more problematic issues later. The best course of action is to ensure the permissions of your directories are setup properly.
+                                h1 Create Our gulpfile
+                                p Now that our plugins are available for us to use, we can start writing our gulpfile and instructing gulp to perform the tasks our boss assigned to us.
+                                p Before we get right into the code I think it’s very important to mention that gulp only has 5 methods. These methods are as follows: task, run, watch, src, and dest. These are all you will need to write your tasks.
+                                p In the root directory of your project create a new file and name it gulpfile.js and paste the following code inside.
+                                pre
+                                    code.language-javascript
+                                        |// Include gulp
+                                        |var gulp = require('gulp');
+                                        |// Include Our Plugins
+                                        |var jshint = require('gulp-jshint');
+                                        |var sass   = require('gulp-sass');
+                                        |var concat = require('gulp-concat');
+                                        |var uglify = require('gulp-uglify');
+                                        |var rename = require('gulp-rename');
+                                        |// Lint Task
+                                        |gulp.task('lint', function() {
+                                        |    return gulp.src('js/*.js')
+                                        |        .pipe(jshint())
+                                        |        .pipe(jshint.reporter('default'));
+                                        |});
+                                        |// Compile Our Sass
+                                        |gulp.task('sass', function() {
+                                        |    return gulp.src('scss/*.scss')
+                                        |        .pipe(sass())
+                                        |        .pipe(gulp.dest('dist/css'));
+                                        |});
+                                        |// Concatenate & Minify JS
+                                        |gulp.task('scripts', function() {
+                                        |    return gulp.src('js/*.js')
+                                        |        .pipe(concat('all.js'))
+                                        |        .pipe(gulp.dest('dist'))
+                                        |        .pipe(rename('all.min.js'))
+                                        |        .pipe(uglify())
+                                        |        .pipe(gulp.dest('dist/js'));
+                                        |});
+                                        |// Watch Files For Changes
+                                        |gulp.task('watch', function() {
+                                        |    gulp.watch('js/*.js', ['lint', 'scripts']);
+                                        |    gulp.watch('scss/*.scss', ['sass']);
+                                        |});
+                                        |// Default Task
+                                        |gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+                                p Now, let’s break this down and review what each part does.
+                                strong Core & Plugins
+                                pre
+                                    code.language-javascript
+                                        | // Include gulp
+                                        | var gulp = require('gulp');
+                                        | // Include Our Plugins
+                                        | var jshint = require('gulp-jshint');
+                                        | var sass   = require('gulp-sass');
+                                        | var concat = require('gulp-concat');
+                                        | var uglify = require('gulp-uglify');
+                                        | var rename = require('gulp-rename');
+                                p This includes the gulp core and plugins associated with the tasks that we will be performing. Next, we setup each of our separate tasks. These tasks are #[strong lint], #[strong sass], #[strong scripts] and default.
+                                strong Lint Task
+                                pre
+                                    code.language-javascript
+                                        | // Lint Task
+                                        | gulp.task('lint', function() {
+                                        |     return gulp.src('js/*.js')
+                                        |     .pipe(jshint())
+                                        |     .pipe(jshint.reporter('default'));
+                                        | });
+                                p Our #[strong lint] task checks any JavaScript file in our #[mark js/] directory and makes sure there are no errors in our code.
+                                strong Sass Task
+                                pre
+                                    code.language-javascript
+                                        | // Concatenate & Minify JS
+                                        | gulp.task('sass', function() {
+                                        |     return gulp.src('scss/*.scss')
+                                        |     .pipe(sass())
+                                        |     .pipe(gulp.dest('dist/css'));
+                                        | });
+                                p The #[strong sass] task compiles any of our Sass files in our #[mark scss/] directory into CSS and saves the compiled CSS file in our #[mark dist/css] directory.
+                                strong Scripts Task
+                                pre
+                                    code.language-javascript
+                                        | // Compile Our Sass
+                                        | gulp.task('scripts', function() {
+                                        |     return gulp.src('js/*.js')
+                                        |     .pipe(concat('all.js'))
+                                        |     .pipe(gulp.dest('dist/js'))
+                                        |     .pipe(rename('all.min.js'))
+                                        |     .pipe(uglify())
+                                        |     .pipe(gulp.dest('dist/js'));
+                                        | });
+                                p The #[strong scripts] task concatenates all JavaScript files in our #[mark js/] directory and saves the ouput to our #[mark dist/js] directory. Then gulp takes that concatenated file, minifies it, renames it and saves it to the #[mark dist/js] directory alongside the concatenated file.                                
+                                strong Watch Task
+                                pre
+                                    code.language-javascript
+                                        | // Watch Files For Changes
+                                        | gulp.task('watch', function() {
+                                        |     gulp.watch('js/*.js', ['lint', 'scripts']);
+                                        |     gulp.watch('scss/*.scss', ['sass']);
+                                        | });
+                                p The #[strong watch] task is used to run tasks as we make changes to our files. As you write code and modify your files, the #[mark gulp.watch()] method will listen for changes and automatically run our tasks again so we don't have to continuously jump back to our command-line and run the gulp command each time.
+                                strong Default Task
+                                pre
+                                    code.language-javascript
+                                        | // Default Task
+                                        | gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+                                p Finally, we have our #[strong default] task which is used as a grouped reference to our other tasks. This will be the task that is ran upon entering #[strong gulp] into the command line without any additional parameters.
+                                p Now, all we have left to do is run gulp. Switch back over to your command-line and type:
+                                pre
+                                    code.language-javascript
+                                        | gulp
+                                p This will call gulp and run everything we have defined in our default task. So, in other words It’s the same thing as running:
+                                pre
+                                    code.language-javascript
+                                        | gulp default
+                                p Additionally, we don’t have to run the #[strong default] task. We could run any of the tasks we defined at any time. Simply call gulp and then specify the task you would like to run directly afterward. For example, we can run our #[strong sass] task manually at any time like so:
+                                pre
+                                    code.language-javascript
+                                        | gulp sass
+                                p Pretty cool, eh?
+                                h1 Wrapping Up
+                                p Well, we’ve made it. We have survived our tempermental, intern-eating boss and we have heroically saved our lunch buddy. Take a moment to pat yourself on the back. As a quick recap, let’s review what we have learned.
+                                ul
+                                  li We learned how to install Node and npm.
+                                  li We learned about the command-line and how to use it.
+                                  li We learned how to use npm to install gulp and various plugins.
+                                  li We learned how to write a gulpfile and run tasks.
+                              p It is my hope that this introduction has made understanding build tools much easier and that you can see the real value that gulp adds to your project and your development workflow. If you have any further questions be sure to post them in the comments!
+                              h1 Additional Reading
+                              p As always, it is great to have some additional resources, especially on the stuff that we couldn’t cover in detail with this article. So, here are some resources to take you beyond the scope of this article should you choose to go there.
+                              ul
+                                li
+                                  a(href="http://gulpjs.com/") Gulp on the Web
+                                li
+                                  a(href="http://gulpjs.com/plugins/") Gulp Plugin Search
+                                li
+                                  a(href="https://github.com/gulpjs/gulp") Gulp on Github
+                                li
+                                  a(href="https://docs.npmjs.com/files/package.json#dependencies") npm package.json Documentation
+                                li
+                                  a(href="https://www.amazon.com/Getting-Started-Gulp-Travis-Maynard/dp/1784395765/156-1040861-5863648?ie=UTF8") Getting Started with Gulp on Amazon
+                        
+                        // social-share
+                        section.social-share
+                          ul
+                            li
+                              |#[a(href="https://www.facebook.com/sharer.php?u=" class="facebook-share") #[span.cz-facebook] Facebook]
+                            li
+                              |#[a(href="https://twitter.com/intent/tweet?url=&text=&via=&hashtags=" class="twitter-share") #[span.cz-twitter] Twitter]
+                            li
+                              |#[a(href="https://plus.google.com/share?url=" class="google-share") #[span.cz-google-plus] Google +]
+                        // latest-post
+                        section.latest-post
+                            article.post-item
+                                .item-thumb
+                                  img(src="assets/img/you-dont-need-javascript-for-that.jpg" alt="You Dont Need JavaScript for That")
+                                .item-title
+                                  h5
+                                    |#[a(href="#") You Dont Need JavaScript for That !]
+                                  span.meta-date POSTED ON #[a(href="#") 13th January 14]
+                            article.post-item 
+                                .item-thumb
+                                  img(src="assets/img/learning-react-js-getting-started-and-concepts.jpg" alt="Document an API with Paw")
+                                .item-title
+                                  h5
+                                    |#[a(href="#") Document an API with Paw]
+                                  span.mate-date POSTED ON #[a(href="#") 4th January 14]
+                            .clear
+                        // disqus
+                        .divider
+                            span.dashed
+                        section.article-comment.disqus_thread#disqus_thread
+            // scripts
+            script(type="text/javascript").
+                var disqus_config = function () {
+                    this.page.url = "http://erdogan.pw/cizi/article.html";
+                    this.page.identifier = "article.html";
+                };
+
+                (function () {
+                    var d = document, s = d.createElement('script');
+                    s.src = '//eneserdogan.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            // footer
+            include views/templates/partials/_footer

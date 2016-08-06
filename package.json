@@ -1,6 +1,6 @@
 {
   "name": "cizi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Cizi - Clean And Minimalistic Personel Blog Theme",
   "readmeFilename": "README.md",
   "main": "index.js",
@@ -25,6 +25,13 @@
     "name": "Enes Erdogan",
     "email": "eneserdgnn@yandex.com",
     "github": "https://github.com/eneserdogan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eneserdogan/cizi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eneserdogan/cizi/issues"
   },
   "license": "MIT",
   "devDependencies": {

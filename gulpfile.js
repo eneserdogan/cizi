@@ -38,7 +38,7 @@ var gulp   = require("gulp"),
 
 
 gulp.task('jade',function(){
-    return gulp.src('development/*.jade')
+    return gulp.src('app/*.jade')
         .pipe(notify({
             "title": "Jade Task",
             "message": "Processing JADE File: <%= file.relative %> | <%= options.date %>",
@@ -51,7 +51,7 @@ gulp.task('jade',function(){
         .pipe(jade({
             pretty:true
         }))
-        .pipe(gulp.dest("./builds"))
+        .pipe(gulp.dest("./dist"))
         .pipe(sync.stream());
 });
 
@@ -64,7 +64,7 @@ gulp.task('jade',function(){
 
 
 gulp.task('style',function(){
-    return gulp.src('development/assets/sass/main.scss')
+    return gulp.src('app/views/assets/sass/main.scss')
         .pipe(notify({
             "title": "Style Task",
             "message": "Processing SCSS File: <%= file.relative %> | <%= options.date %>",
@@ -79,11 +79,11 @@ gulp.task('style',function(){
             outputStyle:'compressed'
         }).on('error',sass.logError))
         .pipe(prefix())
-        .pipe(gulp.dest('builds/assets/css/'))
+        .pipe(gulp.dest('dist/assets/css/'))
         .pipe(rename({
             suffix:'.min'
         }))
-        .pipe(gulp.dest('builds/assets/css/'))
+        .pipe(gulp.dest('dist/assets/css/'))
         .pipe(sync.stream());
 });
 
@@ -96,7 +96,7 @@ gulp.task('style',function(){
 
 
 gulp.task('scripts',function(){
-    return gulp.src('development/assets/js/**/*.js')
+    return gulp.src('app/views/assets/js/**/*.js')
         .pipe(notify({
             "title": "Scripts Task",
             "message": "Processing JS File: <%= file.relative %> | <%= options.date %>",
@@ -111,7 +111,7 @@ gulp.task('scripts',function(){
         .pipe(rename({
             suffix:'.min'
         }))
-        .pipe(gulp.dest('builds/assets/js/'))
+        .pipe(gulp.dest('dist/assets/js/'))
         .pipe(sync.stream());
 });
 
@@ -126,13 +126,13 @@ gulp.task('scripts',function(){
 gulp.task('server',function(){
     sync.init({
         notify : false,
-        server : "./builds/"
+        server : "./dist/"
     });
 
-    gulp.watch('development/assets/js/**/*.js',['scripts']);
-    gulp.watch('development/assets/sass/**/*.scss',['style']);
-    gulp.watch('development/**/*.jade',['jade']);
-    gulp.watch('./builds/*.html').on('change',sync.reload);
+    gulp.watch('app/views/assets/js/**/*.js',['scripts']);
+    gulp.watch('app/views/assets/sass/**/*.scss',['style']);
+    gulp.watch('app/**/*.jade',['jade']);
+    gulp.watch('./dist/*.html').on('change',sync.reload);
 });
 
 
@@ -143,8 +143,8 @@ gulp.task('server',function(){
  */
 
 gulp.task('zip',function(){
-   return gulp.src('builds/**')
-       .pipe(zip('builds/child-theme.zip'))
+   return gulp.src('dist/**')
+       .pipe(zip('dist/child-theme.zip'))
        .pipe(chmod(777))
        .pipe(gulp.dest('./'));
 });
@@ -156,4 +156,4 @@ gulp.task('zip',function(){
  *
  */
 
-gulp.task('default',['jade','style','scripts','server']);
+gulp.task('default',['jade','style','scripts','server','zip']);

@@ -1,0 +1,92 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Footer Styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+footer{
+  @include padding(null null 110px null);
+  &.general{
+    .divider{
+      text-align: center;
+    }
+    .footer-text{
+      @media only screen and(max-width: $mobile-size){
+        @include padding(null 20px);
+      }
+      @media only screen and(min-device-width: $mobile-size) and(max-device-width: $landscape-size ){
+        @include padding(null 20px);
+      }
+      p{
+        font-size:16px;
+        font-weight: 400;
+        color: transparentize($footer-text-color,.35);
+        @include padding(15px null null null);
+      }
+    }
+    .footer-form{
+      @include margin(5% null 5% null);
+      @media only screen and(max-width: $mobile-size){
+        @include padding(null 20px);
+      }
+      @media only screen and(min-device-width: $mobile-size) and(max-device-width: $landscape-size ){
+        @include padding(null 20px);
+      }
+      input[type="email"]{
+        float: left;
+        width: 75%;
+        background: transparentize($footer-input-bg-color,.95);
+        font-size:16px;
+        font-weight: 400;
+        color:$footer-input-color;
+        line-height:34px;
+        border: 0;
+        @include padding(6px 15px);
+        @include border-left-radius(4px);
+        @include border-right-radius(4px);
+        @include placeholder{
+          font-weight: 400;
+          color:$footer-input-placeholder;
+        }
+        @media only screen and(max-width: $mobile-size){
+          width: 92%;
+        }
+        @media only screen and(min-device-width: $mobile-size) and(max-device-width: $landscape-size ){
+          width: 92%;
+        }
+        &:focus{
+          background: transparentize($footer-input-focus-bg,0.88);
+          color:$footer-input-focus-color;
+          @include transition();
+        }
+      }
+      button[type="submit"]{
+        float: left;
+        width: 13%;
+        background: transparentize($footer-button-bg-color,.15);
+        font-size:16px;
+        color:#ffffff;
+        line-height: 46px;
+        text-align: center;
+        border:0;
+        @include padding(0 24px);
+        @include border-right-radius(4px);
+        @include appearance(none);
+        &:hover{
+          background: $body-link-hover-color;
+          @include transition(150ms background linear);
+        }
+        @media only screen and(max-width: $mobile-size){
+          width: 88%;
+          @include margin(10px null);
+          @include border-left-radius(4px);
+        }
+        @media only screen and(min-device-width: $mobile-size) and(max-device-width: $landscape-size ){
+          width: 89%;
+          @include margin(10px null);
+          @include border-left-radius(4px);
+        }
+      }
+    }
+  }
+}

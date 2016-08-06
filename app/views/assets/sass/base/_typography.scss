@@ -1,0 +1,214 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Typography Styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+*{
+  &:focus,&:active{
+    outline: 0;
+  }
+}
+
+body,input,select,textarea{
+  font:{
+    family: $primary-font,$primary-font-type;
+    size  : $body-font-size;
+    weight: $body-font-weight;
+  }
+  color: $body-font-color;
+  line-height:$body-line-height;
+  overflow-x:hidden;
+  word-wrap:break-word;
+  text-rendering: optimizeLegibility;
+  @include transition();
+}
+
+body{
+  background: $body-background-color;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-weight: 300;
+  margin: 0;
+  -webkit-font-variant-ligatures: common-ligatures;
+  -moz-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+  @extend .clear;
+}
+
+h1{
+  font-size:32px;
+  line-height:1.6em;
+  @media only screen and(max-width: $tablet-size){
+    font-size:27px;
+    line-height: 1.5em;
+  }
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 1.6em;
+  @media only screen and(max-width: $tablet-size){
+    font-size:27px;
+    line-height: 1.5em;
+  }
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+a{
+  text-decoration: none;
+  color:$body-link-color;
+  &:hover{
+    color:$body-link-hover-color;
+    @include transition();
+  }
+}
+
+article{
+  &.post{
+    h4,h5,h6{
+      font-weight: 400;
+    }
+    strong,blockquote{
+      font-weight: 400;
+    }
+    blockquote{
+      text-align: left;
+      border-left:3px solid transparentize($body-blockquote-color,.2);
+      @include padding(null null null 20px);
+      @include margin(null null null -23px);
+      & > p{
+        @include margin(null null 0px null);
+      }
+      cite{
+        display: block;
+        font-weight: 300;
+        font-style: normal;
+        font-size:16px;
+        @include margin(5px null null null);
+        &:before{
+          content :"— ";
+        }
+      }
+    }
+    mark{
+      background-color:transparent;
+      @include padding(1px);
+      @include background-image(linear-gradient(to bottom,transparentize($body-mark-color, .91),transparentize($body-mark-color, .91)));
+    }
+    ul,ol{
+      @include padding(0px);
+      li{
+        list-style-type: disc;
+        line-height:1.50;
+        @include padding(null null null 7px);
+        @include margin(0 0 10px 30px);
+      }
+    }
+    img{
+      max-width: 100%;
+    }
+    a{
+      color:$body-link-color;
+      background-position: 0 21px;
+      background-repeat: repeat-x;
+      background-size: 2px 2px;
+      text-shadow: .03em 0 #fff,-.03em 0 #fff,0 .03em #fff,0 -.03em #fff,.06em 0 #fff,-.06em 0 #fff,.09em 0 #fff,-.09em 0 #fff,.12em 0 #fff,-.12em 0 #fff,.15em 0 #fff,-.15em 0 #fff;
+      @include background-image(linear-gradient(to bottom,rgba(0,0,0,0) 50%, lighten($body-link-color, 5%) 50%));
+      &:hover{
+        color:$body-link-hover-color;
+        @include background-image(linear-gradient(to bottom,rgba(0,0,0,0) 50%, lighten( $body-link-hover-color, 20% ) 50%));
+      }
+    }
+    code,pre,kbd,samp{
+      font-size:17px;
+    }
+    .post-picture{
+      position: relative;
+      .picture-desc{
+        position: absolute;
+        top: 0;
+        left: -175px;
+        max-width: 150px;
+        line-height: 24px;
+        text-align: right;
+        border-top: 1px solid #dcd8d5;
+        border-bottom: 1px solid #dcd8d5;
+        font:{
+          size:14px;
+          weight: 600;
+        }
+        @include padding(12px 0);
+        @include margin(10px 0);
+        @media only screen and(max-width:$tablet-size){
+          position: relative;
+          left: 0;
+          width: 100%;
+          max-width: 100%
+        }
+        strong{
+          font-size:15px;
+        }
+        p{
+          margin-top: 5px;
+          @media only screen and(max-width:$tablet-size){
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.divider{
+  text-align: center;
+}
+
+.clear{
+  @include clearfix();
+}
+
+
+span{
+  &.dashed{
+    @include dashed();
+  }
+}
+
+@include selection(){
+  background: $body-selection-bg-color;
+  color:$body-selection-color;
+}

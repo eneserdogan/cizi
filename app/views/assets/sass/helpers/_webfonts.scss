@@ -1,0 +1,120 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Webfonts Styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+@include font-face("ciziCleanIcon","#{$cz-font-path}ciziCleanIcon", $file-formats: eot svg ttf woff);
+
+[class^="cz-"], [class*=" cz-"] {
+  font-family: $icon-font-family !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cz-search {
+  &:before {
+    content: $cz-search;
+  }
+}
+.cz-envelope-o {
+  &:before {
+    content: $cz-envelope-o;
+  }
+}
+.cz-twitter {
+  &:before {
+    content: $cz-twitter;
+  }
+}
+.cz-facebook {
+  &:before {
+    content: $cz-facebook;
+  }
+}
+.cz-facebook-f {
+  &:before {
+    content: $cz-facebook-f;
+  }
+}
+.cz-github {
+  &:before {
+    content: $cz-github;
+  }
+}
+.cz-google-plus {
+  &:before {
+    content: $cz-google-plus;
+  }
+}
+.cz-linkedin {
+  &:before {
+    content: $cz-linkedin;
+  }
+}
+.cz-github-alt {
+  &:before {
+    content: $cz-github-alt;
+  }
+}
+.cz-youtube {
+  &:before {
+    content: $cz-youtube;
+  }
+}
+.cz-stack-overflow {
+  &:before {
+    content: $cz-stack-overflow;
+  }
+}
+.cz-instagram {
+  &:before {
+    content: $cz-instagram;
+  }
+}
+.cz-skype {
+  &:before {
+    content: $cz-skype;
+  }
+}
+.cz-behance {
+  &:before {
+    content: $cz-behance;
+  }
+}
+.cz-soundcloud {
+  &:before {
+    content: $cz-soundcloud;
+  }
+}
+.cz-reddit-alien {
+  &:before {
+    content: $cz-reddit-alien;
+  }
+}
+.cz-dribbble {
+  &:before {
+    content: $cz-dribbble;
+  }
+}
+.cz-slack {
+  &:before {
+    content: $cz-slack;
+  }
+}
+.cz-steam {
+  &:before {
+    content: $cz-steam;
+  }
+}
+.cz-snapchat-ghost {
+  &:before {
+    content: $cz-snapchat-ghost;
+  }
+}

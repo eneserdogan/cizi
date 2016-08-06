@@ -1,0 +1,50 @@
+include views/templates/helpers/_mixin
+doctype
+html(lang="en")
+    include views/templates/partials/_head
+    body
+        // container
+        .container
+            // header
+            include views/templates/partials/_header
+            // content
+            .content.main
+                // main-area
+                .main-area
+                    // main
+                    main.home
+                        // content-header
+                        header.content-header
+                            h1.content-title Hi, I'm John Doe
+                            span.dashed
+                        // content-profile
+                        section.content-profile
+                            // profile-wrap
+                            .profile-wrap
+                                .author-avatar
+                                    .avatar(style="background-image: url(assets/img/avatar.jpg)")
+                                .author-url
+                                    a(href="https://github.com/eneserdogan")
+                                        span.cz-
+                            // bio-wrap
+                            .bio-wrap
+                                p   Hi I'm John, Nullam vestibulum diam lorem, a lacinia lacus scelerisque eu. Donec venenatis pulvinar sem, et semper tellus. Pellentesque euismod elementum feugiat. Maecenas eget mauris eu lectus ultricies vehicula. Aenean viverra turpis ut sapien placerat, feugiat fringilla tortor rhoncus. 
+                        // content-articles
+                        section.content-articles
+                            h5 Latest Articles
+                            +article("Getting Started with Gulp")
+                            +article("Sass Pathways")
+                            +article("You Don't Need JavaScript for That!")
+                            +article("Testing Your Style With ESLint and Mocha")
+                            +article("Using Recursive Components in Ember.js")
+                            +article("Markoff: A Free Markdown Previewer for OS X")
+                            +article("Document an API with Paw")
+                            +article("Learning React.js: Getting Started and Concepts")
+                            // pagination
+                            nav.pagination
+                                ul
+                                    each items in[1,2,3,4,5,"NEXT"]
+                                      li
+                                        a(href="#")=items
+            // footer
+            include views/templates/partials/_footer

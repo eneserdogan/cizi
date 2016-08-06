@@ -1,0 +1,39 @@
+include views/templates/helpers/_mixin
+doctype
+html(lang="en")
+    include views/templates/partials/_head
+    body
+        // container
+        .container
+            // header
+            include views/templates/partials/_header
+            // content
+            .content.main
+                // main-area
+                .main-area
+                    // main
+                    main.home
+                        // content-header
+                        header.content-header
+                            h1.content-title Category: JavaScript
+                            span.dashed
+                        // content-articles
+                        section.content-articles
+                            +article("Getting Started with Gulp")
+                            +article("You Don't Need JavaScript for That!")
+                            +article("Testing Your Style With ESLint and Mocha")
+                            +article("Using Recursive Components in Ember.js")
+                            +article("Document an API with Paw")
+                            +article("Access Platform APIs with React Native Modules")
+                            +article("Build a Music Streaming App with Electron")
+                            +article("Building a Circular Navigation with CSS Transforms")
+                            +article("Using Jade and Grunt to Speed Up HTML Production")
+                            +article("Stylelint: The Style Sheet Linter We’ve Always Wanted")
+                            // pagination
+                            nav.pagination
+                                ul
+                                    each items in[1,2,3,4,5,"NEXT"]
+                                      li
+                                        a(href="#")=items
+            // footer
+            include views/templates/partials/_footer

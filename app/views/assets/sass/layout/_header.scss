@@ -1,0 +1,292 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Header Styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+
+header{
+  &.main-header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 10;
+    line-height: 50px;
+    box-shadow: 0 0 2px rgba(0,0,0,.1);
+    background: rgba(255, 255, 255, 0.96);
+    @include padding(null 20px);
+    @include transform(translateY(0%));
+    @include transition(transform 200ms cubic-bezier(.700,.080,.500,1));
+    h1{
+      float: left;
+      margin-top: 17px;
+      font-size:14px;
+      @include user-select(none);
+      a{
+        font-weight: 600;
+        color:$body-link-color;
+        @media only screen and(max-width:$mobile-size){
+          font-weight: 400;
+        }
+        &:hover{
+          color:$body-link-hover-color;
+          @include transition();
+        }
+      }
+    }
+    nav{
+      float: left;
+      @media only screen and(max-width:$mobile-size){
+        opacity: 0;
+        text-align: center;
+        background: #fff;
+        width: 100%;
+        float: none;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        @include transform(scaleY(0));
+        @include transition(scaleY 200ms ease);
+        @include transform-origin(center top);
+      }
+      ul{
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        li{
+          display: inline-block;
+          margin-left: 20px;
+          a{
+            font:{
+              size:14px;
+              weight:400;
+            }
+            color:transparentize($body-link-color, .3);
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (   min--moz-device-pixel-ratio: 2),
+            only screen and (     -o-min-device-pixel-ratio: 2/1),
+            only screen and (        min-device-pixel-ratio: 2),
+            only screen and (                min-resolution: 192dpi),
+            only screen and (                min-resolution: 2dppx) {
+              font-weight: 300;
+            }
+            &:hover{
+              color:$body-link-hover-color;
+              @include transition();
+            }
+          }
+        }
+      }
+    }
+    .header-search{
+      float: left;
+      margin-left: 20px;
+      @media only screen and(max-width:$mobile-size){
+        float: right;
+        margin-left: 0;
+        margin-right: 5px;
+        margin-top: 3px;
+      }
+      label{
+        cursor: pointer;
+        color:transparentize(#000000, .3);
+        font:{
+          size:13px;
+          weight:400;
+        }
+
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (   min--moz-device-pixel-ratio: 2),
+        only screen and (     -o-min-device-pixel-ratio: 2/1),
+        only screen and (        min-device-pixel-ratio: 2),
+        only screen and (                min-resolution: 192dpi),
+        only screen and (                min-resolution: 2dppx) {
+          font:{
+            size:14px;
+            weight:300;
+          }
+          -webkit-text-stroke: 2px #ffffff;
+        }
+        @media only screen and(max-width:$mobile-size){
+          font-size:19px;
+        }
+        &:hover{
+          color:$body-link-hover-color;
+          @include transition();
+        }
+      }
+    }
+    .header-navicon{
+      position: relative;
+      float: right;
+      display: none;
+      height: 50px;
+      width: 50px;
+      margin-right: 20px;
+      @media only screen and(max-width:$mobile-size){
+        display: block;
+      }
+    }
+  }
+}
+
+.header-nav--check{
+  opacity: 0;
+  width: 0;
+  &:checked{
+    & ~ .header-navicon{
+      .hamburger-inner{
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        background-color: transparent;
+        &:before{
+          left: -60px;
+          top: -60px;
+          @include transform(translate3d(60px, 60px, 0) rotate(45deg));
+          @include transition(left 0.2s ease-out,top 0.05s 0.2s linear,transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1));
+        }
+        &:after{
+          right: -60px;
+          top: -60px;
+          @include transform(translate3d(-60px, 60px, 0) rotate(-45deg));
+          @include transition(right 0.2s ease-out,top 0.05s 0.2s linear,transform 0.2s 0.25s cubic-bezier(0.075, 0.82, 0.165, 1));
+        }
+      }
+    }
+    & ~ nav{
+      opacity: 1;
+      @include transform(scaleY(1));
+      @include transition();
+      ul{
+        width: 100%;
+        li{
+          &:first-child{
+            border-top: 1px solid rgba(0,0,0,.05);
+          }
+          border-bottom: 1px solid rgba(0,0,0,0.05);
+          display: block;
+          margin-left: 0;
+          width: 91%;
+          a{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+.header-search--check{
+  opacity: 0;
+  width: 0;
+  &:checked{
+    & ~ .header-saerch--form{
+      visibility: inherit;
+      @include transform(translateY(5%) !important);
+      @include transition(transform 200ms cubic-bezier(.700,.080,.500,1));
+    }
+    & ~ .header-search--overlay{
+      opacity: 1 !important;
+      visibility: inherit !important;
+      @include transition(all 200ms cubic-bezier(.700,.080,.500,1));
+    }
+  }
+}
+
+.header-saerch--form{
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  line-height: 50px;
+  box-shadow: 0 0 2px rgba(0,0,0,.1);
+  visibility: hidden;
+  @include transform(translateY(-100%));
+  @include transition(transform 200ms cubic-bezier(.700,.080,.500,1));
+  .form--wrapper{
+    position: relative;
+  }
+  span{
+    position: absolute;
+    top:18px;
+    left: 15px;
+    z-index: 15;
+    color:$body-link-color;
+    font:{
+      size:15px;
+    }
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      font-weight: 300;
+      -webkit-text-stroke: 1px #ffffff;
+    }
+  }
+  input{
+    border:0;
+    width: 100%;
+    padding: 0 40px;
+    margin-top: 11px;
+    color:$body-link-color;
+    font:{
+      weight:600;
+      size:16px;
+    }
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      font-weight: 300;
+    }
+    @include placeholder{
+      color:transparentize($body-link-color,.7);
+      font:{
+        weight:400;
+        size:16px;
+      }
+    }
+  }
+  label{
+    position: absolute;
+    z-index: 55;
+    top: -9px;
+    right: 20px;
+    color: #9E9E9E;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: block;
+  }
+}
+
+.header-search--overlay{
+  position: fixed;
+  top: 53px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparentize(#000000, .8);;
+  opacity: 0;
+  z-index: 15;
+  visibility: hidden;
+  @include transition(all 200ms cubic-bezier(.700,.080,.500,1));
+}
+
+.header--pinned{
+  @include transform(translateY(-100%) !important);
+  @include transition(transform 200ms cubic-bezier(.700,.080,.500,1));
+}

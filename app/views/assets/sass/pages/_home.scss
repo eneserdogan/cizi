@@ -1,0 +1,228 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Home Styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+main{
+  &.home,&.article{
+    header,.content-profile{
+      text-align: center;
+    }
+  }
+}
+
+section{
+  &.content-profile{
+    @include margin(15px null 120px null);
+    .profile-wrap{
+      display: inline-block;
+      position: relative;
+      .author-avatar{
+        height: 130px;
+        width: 130px;
+        @include transition();
+        @media only screen and(max-width: $tablet-size){
+          width: 100px;
+          height: 100px;
+        }
+        .avatar{
+          height: 100%;
+          width: 100%;
+          background: #ffffff;
+          background-repeat:no-repeat;
+          background-size:cover;
+          border: 2px solid #f0f0f0;
+          @include border-left-radius(100%);
+          @include border-right-radius(100%);
+        }
+      }
+      .author-url{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        a{
+          display: block;
+          width: 38px;
+          height: 38px;
+          font-size: 20px;
+          line-height: 38px;
+          color: #fff;
+          @include border-left-radius(100%);
+          @include border-right-radius(100%);
+          &:hover{
+            span{
+              color:transparentize(#ffffff, .2);
+              @include transition();
+            }
+          }
+          &[href*="facebook.com"]{
+            background: $facebook-color;
+            span{
+              &:before{
+                content:$cz-facebook-f;
+              }
+            }
+          }
+          &[href*="twitter.com"]{
+            background: $twitter-color;
+            span{
+              &:before{
+                content:$cz-twitter;
+              }
+            }
+          }
+          &[href*="github.com"]{
+            background: $github-color;
+            span{
+              &:before{
+                content:$cz-github;
+              }
+            }
+          }
+          &[href*="linkedin.com"]{
+            background: $linkedin-color;
+            span{
+              &:before{
+                content:$cz-linkedin;
+              }
+            }
+          }
+          &[href*="youtube.com"]{
+            background: $youtube-color;
+            span{
+              &:before{
+                content:$cz-youtube;
+              }
+            }
+          }
+          &[href*="instragram.com"]{
+            background: $instagram-color;
+            span{
+              &:before{
+                content:$cz-instagram;
+              }
+            }
+          }
+          &[href*="soundcloud.com"]{
+            background: $soundcloud-color;
+            span{
+              &:before{
+                content:$cz-soundcloud;
+              }
+            }
+          }
+          &[href*="skype.com"]{
+            background: $skype-color;
+            span{
+              &:before{
+                content:$cz-skype;
+              }
+            }
+          }
+          &[href*="behance.net"]{
+            background: $behance-color;
+            span{
+              &:before{
+                content:$cz-behance;
+              }
+            }
+          }
+          &[href*="reddit.com"]{
+            background: $reddit-color;
+            span{
+              &:before{
+                content:$cz-reddit-alien;
+              }
+            }
+          }
+          &[href*="stackoverflow.com"]{
+            background: $stack-overflow-color;
+            span{
+              &:before{
+                content:$cz-stack-overflow;
+              }
+            }
+          }
+          &[href*="plus.google.com"]{
+            background: $googleplus-color;
+            span{
+              &:before{
+                content:$cz-google-plus;
+              }
+            }
+          }
+          &[href*="mailto:"]{
+            background: $github-color;
+            span{
+              &:before{
+                content:$cz-envelope-o;
+              }
+            }
+          }
+        }
+      }
+    }
+    .bio-wrap{
+      text-align: center;
+      @include padding(null 20px);
+      @media only screen and(max-width: $tablet-size){
+        font-size:18px;
+      }
+    }
+  }
+  &.content-articles{
+    box-sizing: border-box;
+    @media only screen and(max-width: $mobile-size){
+      @include padding(0 20px);
+    }
+    @media only screen and(min-device-width: $mobile-size) and(max-device-width: $landscape-size ){
+      @include padding(0 20px);
+    }
+    h5{
+      @include margin(null null 25px null);
+    }
+    article{
+      &.article--list{
+        @include margin(null null 13px null);
+        h2{
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 100%;
+          display: block;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+nav{
+  @extend .clear;
+  &.pagination{
+    ul{
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      li{
+        list-style-type: none;
+        float: left;
+        @include margin(null null null 5px);
+        &:first-child{
+          margin-left: 0;
+        }
+        a{
+          color:#333;
+          font-size:15px;
+          @media only screen and(max-width: $tablet-size){
+            font-size:19px;
+          }
+          &:hover{
+            color:$body-link-hover-color;
+            @include transition();
+          }
+        }
+      }
+    }
+  }
+}

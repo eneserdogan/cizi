@@ -1,0 +1,76 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Contact Styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+section{
+  &.content-contact{
+    width: 100%;
+    @media only screen and(max-width: $mobile-size){
+      padding-left: 20px;
+    }
+    .form-field{
+      margin-top: 25px;
+      label{
+        display: block;
+        font-size:18px;
+        margin-bottom: 5px;
+      }
+      input,textarea{
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        max-height: 150px;
+        padding: 5px 15px;
+        border:2px solid #f3f3f3;
+        font-size:16px;
+        color:#444444;
+        &:focus{
+          border-color:#e5e5e5;
+          @include transition();
+        }
+        @media only screen and(max-width: $mobile-size){
+          width: 90%;;
+        }
+      }
+    }
+    button{
+      box-sizing: border-box;
+      float: right;
+      margin-top: 25px;
+      padding: 7px 30px;
+      border: 0;
+      font-size:16px;
+      color:#ffffff;
+      background: transparentize($footer-button-bg-color,.15);
+      @include appearance(none);
+      @include border-left-radius(20px);
+      @include border-right-radius(20px);
+      &:hover{
+        background: $body-link-hover-color;
+        @include transition(150ms background linear);
+      }
+      @media only screen and(max-width: $mobile-size){
+        float: none;
+        width: 90%;
+        @include border-left-radius(3px);
+        @include border-right-radius(3px);
+      }
+    }
+    .result{ 
+      padding: 5px 17px;
+      color: #2c3e50;
+      box-sizing: border-box;
+      margin-top: 30px;
+      font-size: 17px;
+      border: 1px solid #DDDDDD;
+      &__warning{
+        border-color:#f1c40f;
+      }
+      &__success{
+        border-color:#16a085;
+      }
+    }
+  }
+}

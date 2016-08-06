@@ -1,0 +1,25 @@
+include views/templates/helpers/_mixin
+doctype
+html(lang="en")
+    include views/templates/partials/_head
+    body
+        // container
+        .container
+            // header
+            include views/templates/partials/_header
+            // content
+            .content.main
+                // main-area
+                .main-area
+                    // main
+                    main.home
+                        // content-header
+                        header.content-header
+                            h1.content-title Nothing Found :(
+                            span.dashed
+                        // content-found
+                        section.content-found
+                          img(src="assets/img/404.gif")
+
+            // footer
+            include views/templates/partials/_footer
