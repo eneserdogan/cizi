@@ -26,6 +26,7 @@ section{
         border:2px solid #f3f3f3;
         font-size:16px;
         color:#444444;
+        @include appearance(none);
         &:focus{
           border-color:#e5e5e5;
           @include transition();
@@ -58,13 +59,18 @@ section{
         @include border-right-radius(3px);
       }
     }
-    .result{ 
+    .result{
       padding: 5px 17px;
       color: #2c3e50;
       box-sizing: border-box;
       margin-top: 30px;
       font-size: 17px;
       border: 1px solid #DDDDDD;
+      @media only screen and(max-width: $mobile-size){
+        width: 90%;
+        @include border-left-radius(3px);
+        @include border-right-radius(3px);
+      }
       &__warning{
         border-color:#f1c40f;
       }
