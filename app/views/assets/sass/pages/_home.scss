@@ -56,6 +56,22 @@ section{
               @include transition();
             }
           }
+          &[href*="codepen.io"]{
+            background: $codepen-color;
+            span{
+              &:before{
+                content:$cz-codepen;
+              }
+            }
+          }
+          &[href*="500px.com"]{
+            background: $codepen-color;
+            span{
+              &:before{
+                content:$cz-500px;
+              }
+            }
+          }
           &[href*="facebook.com"]{
             background: $facebook-color;
             span{

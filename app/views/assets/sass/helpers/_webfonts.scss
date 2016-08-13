@@ -18,6 +18,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cz-close {
+  &:before {
+    content: $cz-close;
+  }
+}
+.cz-remove {
+  &:before {
+    content: $cz-remove;
+  }
+}
+.cz-times {
+  &:before {
+    content: $cz-times;
+  }
+}
+.cz-codepen {
+  &:before {
+    content: $cz-codepen;
+  }
+}
+.cz-500px {
+  &:before {
+    content: $cz-500px;
+  }
+}
 .cz-search {
   &:before {
     content: $cz-search;
@@ -36,11 +61,6 @@
 .cz-facebook {
   &:before {
     content: $cz-facebook;
-  }
-}
-.cz-facebook-f {
-  &:before {
-    content: $cz-facebook-f;
   }
 }
 .cz-github {
@@ -78,14 +98,29 @@
     content: $cz-instagram;
   }
 }
+.cz-dribbble {
+  &:before {
+    content: $cz-dribbble;
+  }
+}
 .cz-skype {
   &:before {
     content: $cz-skype;
   }
 }
+.cz-slack {
+  &:before {
+    content: $cz-slack;
+  }
+}
 .cz-behance {
   &:before {
     content: $cz-behance;
+  }
+}
+.cz-steam {
+  &:before {
+    content: $cz-steam;
   }
 }
 .cz-soundcloud {
@@ -96,21 +131,6 @@
 .cz-reddit-alien {
   &:before {
     content: $cz-reddit-alien;
-  }
-}
-.cz-dribbble {
-  &:before {
-    content: $cz-dribbble;
-  }
-}
-.cz-slack {
-  &:before {
-    content: $cz-slack;
-  }
-}
-.cz-steam {
-  &:before {
-    content: $cz-steam;
   }
 }
 .cz-snapchat-ghost {

@@ -51,6 +51,7 @@ $body-link-hover-color     : #E20771          !default;
 
 // SOCIAL COLOR
 
+$codepen-color             : #191919          !default;
 $github-color              : #333333          !default;
 $twitter-color             : #00aced          !default;
 $facebook-color            : #3b5998          !default;
@@ -74,6 +75,11 @@ $reddit-color              : #95c4f3          !default;
 // ICON FONT
 
 $cz-font-path              : "../fonts/"      !default;
+$cz-close                  : "\f00d"          !default;
+$cz-remove                 : "\f00d"          !default;
+$cz-times                  : "\f00d"          !default;
+$cz-codepen                : "\f1cb"          !default;
+$cz-500px                  : "\f26e"          !default;
 $cz-search                 : "\f002"          !default;
 $cz-envelope-o             : "\f003"          !default;
 $cz-twitter                : "\f099"          !default;
