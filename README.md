@@ -43,6 +43,7 @@ app/
 ├── 404.jade
 ├── about.jade
 ├── article.jade
+├── article-comment.jade
 ├── category.jade
 ├── contact.jade
 ├── index.jade
@@ -60,6 +61,7 @@ dist/
 ├── 404.html
 ├── about.html
 ├── article.html
+├── article-comment.html
 ├── category.html
 ├── contact.html
 ├── index.html

@@ -144,7 +144,7 @@ gulp.task('server',function(){
 
 gulp.task('zip',function(){
    return gulp.src('dist/**')
-       .pipe(zip('dist/child-theme.zip'))
+       .pipe(zip('child-theme.zip'))
        .pipe(chmod(777))
        .pipe(gulp.dest('./'));
 });
