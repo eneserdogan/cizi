@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cizi - Clean And Minimalistic Personel Blog Theme</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon-->
+    <link rel="icon" href="path/to/favicon-16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="path/to/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="path/to/favicon-48.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="path/to/favicon-62.png" sizes="62x62" type="image/png">
+    <link rel="icon" href="path/to/favicon-192.png" sizes="192x192" type="image/png">
+    <!-- Facebook-->
+    <meta property="op:markup_version" content="v1.0">
+    <meta property="fb:app_id" content="123456789">
+    <meta property="og:url" content="https://yoursite.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Content Title">
+    <meta property="og:image" content="https://yoursite.com/image.jpg">
+    <meta property="og:description" content="Description Here">
+    <meta property="og:site_name" content="Site Name">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@site_account">
+    <meta name="twitter:creator" content="@individual_account">
+    <meta name="twitter:url" content="https://yoursite.com/">
+    <meta name="twitter:title" content="Content Title">
+    <meta name="twitter:description" content="Content description less than 200 characters">
+    <meta name="twitter:image" content="https://yoursite.com/image.jpg">
+    <!-- Google+-->
+    <link rel="publisher" href="https://plus.google.com/+YourPage">
+    <!--meta(itemprop="name" content="Content Title")-->
+    <!--meta(itemprop="description" content="Content description less than 200 characters")-->
+    <!--meta(itemprop="image" content="https://yoursite.com/image.jpg")-->
+    <!-- CSS-->
+    <link rel="styleSheet" href="assets/css/main.min.css">
+  </head>
+  <body>
+    <!-- container-->
+    <div class="container">
+      <!-- header-->
+      <header id="main-header" class="main-header">
+        <!-- header-nav--check-->
+        <input type="checkbox" id="headerNavCheck" class="header-nav--check">
+        <!-- header-title-->
+        <h1 class="header-title"><a href="index.html">John Doe</a></h1>
+        <!-- header-nav-->
+        <nav class="header-nav">
+          <ul>
+            <li> <a href="category.html">Category</a></li>
+            <li> <a href="about.html">About</a></li>
+            <li> <a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- header-navicon-->
+        <div class="header-navicon">
+          <label for="headerNavCheck" class="hamburger hamburger--emphatic"><span class="hamburger-box test-box"><span class="hamburger-inner"></span></span></label>
+        </div>
+        <!-- header-search-->
+        <div class="header-search">
+          <label for="headerSearchCheck"><span class="cz-search"></span></label>
+        </div>
+        <!-- clear-->
+        <div class="clear"></div>
+      </header>
+      <!-- haeder-search--check-->
+      <input type="checkbox" id="headerSearchCheck" class="header-search--check">
+      <!-- header-search--form-->
+      <div class="header-saerch--form">
+        <form action="search.html" method="POST">
+          <!-- form--wrapper-->
+          <div class="form--wrapper"><span class="cz-search"></span>
+            <input placeholder="Text your here" type="text" autofocus>
+            <label for="headerSearchCheck" class="hamburger hamburger--vortex is-active"><span class="hamburger-box test-box"><span class="hamburger-inner"></span></span></label>
+          </div>
+          <!-- clear-->
+          <div class="clear"></div>
+        </form>
+      </div>
+      <!-- header-search--overlay-->
+      <div class="header-search--overlay"></div>
+      <!-- content-->
+      <div class="content">
+        <!-- main-area-->
+        <div class="main-area">
+          <!-- main-->
+          <main class="article">
+            <article class="post">
+              <!-- content-header-->
+              <header class="content-header">
+                <h1 class="content-title">Getting Started with Gulp</h1><span class="dashed"></span>
+              </header>
+              <!-- content-post-->
+              <div class="content-post">
+                <p>The good news is that it is actually pretty simple! I have created five basic steps that walk you through all of the intimidating stuff and introduce you to the core ideas that you will need to know to start using gulp. Let's get started!</p>
+                <div class="post-picture"><img src="assets/img/gulp-article.png" alt="gulp">
+                  <div class="picture-desc"><strong>Gulp</strong> 
+                    <p>Automate and enhance your workflow</p>
+                  </div>
+                </div>
+                <h1>Step One - Install Node</h1>
+                <p> First - we need our most important requirement, Node. To install Node - simply visit <a href="http://nodejs.org">nodejs.org</a> and then click that big green “Install” button. Once your download completes, run that application and you should be all ready to go. The Node installer also includes npm, which we will come back to a little later.</p>
+                <h1>Step Two - Get To Know Your Command Line</h1>
+                <p>Now, you may not be very familiar with your command-line interface (Terminal for OSX, Command Prompt for Windows) but you should be! It may seem intimidating at first, but once you get the hang of it you will have the ability to run many different command line applications such as <a href="http://sass-lang.com">Sass</a>, <a href="http://yeoman.io/">Yeoman</a> and <a href="https://git-scm.com/">Git</a>. All of which are very useful tools that your workflow could benefit from!</p>
+                <blockquote>
+                  <p>If you are familiar with your command-line interface, then feel free to skip to step four.</p>
+                </blockquote>
+                <p>As a quick example, open up your command line and we will throw a couple commands at it to ensure that Node is properly installed.</p>
+                <pre><code class="language-javascript">node -v</code></pre>
+                <p>Type that and then hit enter and you should get a response on the next line with the version number of Node that you have installed. Now, let’s do the same for npm.</p>
+                <pre><code class="language-javascript">npm -v</code></pre>
+                <p>Again, this should return the version number on the next line.</p>
+                <p>If you didn’t get a response, then it may mean that Node didn’t install correctly or you may need to restart your command line application. If this still isn’t working after restarting, then simply jump back up the top and try the first step again.</p>
+                <h1>Step Three - Navigate To Your Project Directory</h1>
+                <p>Now that we have met our command-line interface and know how to communicate with it, our next step will be navigating it. Luckily, it only takes two commands to change directories and take a look at what is inside them. These commands are 
+                  <mark>ls</mark> (or 
+                  <mark>dir</mark>, for Windows) to list what is in a directory and 
+                  <mark>cd</mark> to change directories.
+                </p>
+                <blockquote>
+                  <p>I suggest that you spend some time playing with these commands. Get used to your file system and be aware of where everything is located. Don’t rush through this - it will save you a lot of headache later!</p>
+                </blockquote>
+                <p>Once you are comfortable with the 
+                  <mark>ls</mark> and 
+                  <mark>cd</mark> commands, we need to navigate to our project folder. This will likely be different for each person, but as an example this is what I would type to navigate to my local project:
+                </p>
+                <pre><code class="language-bash">cd /Applications/XAMPP/xamppfiles/htdocs/my-project</code></pre>
+                <blockquote>
+                  <p>It is important to note that I am working on OS X. The file system on Windows is much different so, while this example may be similar, it wont translate directly to Windows.</p>
+                </blockquote>
+                <p>Once you have made it to your project directory - let's run a quick npm command to initialize our 
+                  <mark>package.json</mark> file.
+                </p>
+                <pre><code class="language-javascript">npm init</code></pre>
+                <p>This will prompt us to answer a few questions about our project. Once completed, it will create a file in the root directory of the project called 
+                  <mark>package.json</mark> which will provide information about the project and its dependencies. Now, we’re ready to install gulp.
+                </p>
+                <h1>Step Four - Installing gulp</h1>
+                <p>You’ve met your command-line and you know how to talk to it - you even know your way around your file system. Now, let’s meet npm and install gulp!</p>
+                <p>
+                  <mark>npm</mark> is a package manager for Node that will enable you to install additional modules for use in your projects from the command line. To learn more about npm, take a moment and visit the <a href="http://npmjs.org">npm website</a> to browse and search through all of the available packages. As a small exercise, search for gulp and take a look around.
+                </p>
+                <p>When you're ready to install gulp, jump back to your command-line application and type:</p>
+                <pre><code class="language-javascript">npm install -g gulp</code></pre>
+                <p>Let’s take a moment to break this down.</p>
+                <ul>
+                  <li>
+                    <mark>npm</mark> is the application we are using to install our package.
+                  </li>
+                  <li>We are running the 
+                    <mark>install</mark> command on that application.
+                  </li>
+                  <li>The 
+                    <mark>-g</mark> is an optional flag used to signify that we want to install this package globally so that any project can use it.
+                  </li>
+                  <li>And finally, 
+                    <mark>gulp</mark> is the name of the package we would like to install.
+                  </li>
+                </ul>
+                <blockquote>
+                  <p>If you are getting 
+                    <mark>EACCES</mark> errors when installing modules you don't have permission to write to the directory that npm is using to store them. You can prepend those commands with 
+                    <mark>sudo</mark>, but it is not advised as it can lead to more problematic issues later. For more information on how to resolve this, check out <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">Fixing npm Permissions.</a>
+                  </p>
+                </blockquote>
+                <p>Once that has completed check your command-line to ensure that there are no error messages. If there are none to be seen, then congratulations! You just installed gulp! Just to double check, let’s refer back to our versioning commands we used above for Node and npm.</p>
+                <pre><code class="language-javascript">gulp -v</code></pre>
+                <p>Like before, this should return the version number on the next line of your command-line.Next, we also need to install gulp locally.</p>
+                <pre><code class="language-javascript">npm install --save-dev gulp</code></pre>
+                <p>The only thing different here is we used the --save-dev flag which instructs npm to add the dependency to our devDependencies list in our package.json file that we created earlier.</p>
+                <p>Dependencies help us organize which packages are needed in our development and production environments as others contribute to or use our project. If you would like to read more about dependencies be sure to check out the package.json documentation.</p>
+                <p>Now that gulp is installed, the next step is setting up our gulpfile. We’re almost done!</p>
+                <h1>Step Five - Setting Up Our Gulpfile & Running Gulp</h1>
+                <p>Once gulp is installed we have to give it some instruction so it knows what tasks for perform for us. But, first, we need to figure out exactly what tasks we need to run in our project</p>
+                <p>In our Exciting Non-Generic Real World Scenario®, our boss has assigned us with the following tasks:</p>
+                <ul>
+                  <li>Lint our JavaScript. (Seriously. Do it.)</li>
+                  <li>Compile our Sass files. (Browsers can’t read that stuff...)</li>
+                  <li>Concatenate our JavaScript. (Reduce HTTP Requests!)</li>
+                  <li>Minify and rename concatenated files. (Every little bit counts!)</li>
+                </ul>
+                <p>I’m imagining our supervisor as the impatient, somewhat frightening type who eats interns when they don't do what the boss wants. So, let’s get right to it before our lunch companion gets eaten.</p>
+                <h1>Install Required Plugins</h1>
+                <pre><code class="language-javascript">npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev</code></pre>
+                <p>This will install all of the plugins we will need and add them to our devDependencies in our package.json file like we did when we installed gulp</p>
+                <blockquote>
+                  <p>If you are getting permissions errors installing these plugins you may have some issues with the permissions in your local project directory. You can prepend those commands with sudo, but it is not advised as it can lead to more problematic issues later. The best course of action is to ensure the permissions of your directories are setup properly.</p>
+                </blockquote>
+                <h1>Create Our gulpfile</h1>
+                <p>Now that our plugins are available for us to use, we can start writing our gulpfile and instructing gulp to perform the tasks our boss assigned to us.</p>
+                <p>Before we get right into the code I think it’s very important to mention that gulp only has 5 methods. These methods are as follows: task, run, watch, src, and dest. These are all you will need to write your tasks.</p>
+                <p>In the root directory of your project create a new file and name it gulpfile.js and paste the following code inside.</p>
+                <pre><code class="language-javascript">// Include gulp
+var gulp = require('gulp');
+// Include Our Plugins
+var jshint = require('gulp-jshint');
+var sass   = require('gulp-sass');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+// Lint Task
+gulp.task('lint', function() {
+   return gulp.src('js/*.js')
+       .pipe(jshint())
+       .pipe(jshint.reporter('default'));
+});
+// Compile Our Sass
+gulp.task('sass', function() {
+   return gulp.src('scss/*.scss')
+       .pipe(sass())
+       .pipe(gulp.dest('dist/css'));
+});
+// Concatenate & Minify JS
+gulp.task('scripts', function() {
+   return gulp.src('js/*.js')
+       .pipe(concat('all.js'))
+       .pipe(gulp.dest('dist'))
+       .pipe(rename('all.min.js'))
+       .pipe(uglify())
+       .pipe(gulp.dest('dist/js'));
+});
+// Watch Files For Changes
+gulp.task('watch', function() {
+   gulp.watch('js/*.js', ['lint', 'scripts']);
+   gulp.watch('scss/*.scss', ['sass']);
+});
+// Default Task
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);</code></pre>
+                <p>Now, let’s break this down and review what each part does.</p><strong>Core & Plugins</strong>
+                <pre><code class="language-javascript">// Include gulp
+var gulp = require('gulp');
+// Include Our Plugins
+var jshint = require('gulp-jshint');
+var sass   = require('gulp-sass');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');</code></pre>
+                <p>This includes the gulp core and plugins associated with the tasks that we will be performing. Next, we setup each of our separate tasks. These tasks are <strong>lint</strong>, <strong>sass</strong>, <strong>scripts</strong> and default.</p><strong>Lint Task</strong>
+                <pre><code class="language-javascript">// Lint Task
+gulp.task('lint', function() {
+    return gulp.src('js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});</code></pre>
+                <p>Our <strong>lint</strong> task checks any JavaScript file in our 
+                  <mark>js/</mark> directory and makes sure there are no errors in our code.
+                </p><strong>Sass Task</strong>
+                <pre><code class="language-javascript">// Concatenate & Minify JS
+gulp.task('sass', function() {
+    return gulp.src('scss/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('dist/css'));
+});</code></pre>
+                <p>The <strong>sass</strong> task compiles any of our Sass files in our 
+                  <mark>scss/</mark> directory into CSS and saves the compiled CSS file in our 
+                  <mark>dist/css</mark> directory.
+                </p><strong>Scripts Task</strong>
+                <pre><code class="language-javascript">// Compile Our Sass
+gulp.task('scripts', function() {
+    return gulp.src('js/*.js')
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(rename('all.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'));
+});</code></pre>
+                <p>The <strong>scripts</strong> task concatenates all JavaScript files in our 
+                  <mark>js/</mark> directory and saves the ouput to our 
+                  <mark>dist/js</mark> directory. Then gulp takes that concatenated file, minifies it, renames it and saves it to the 
+                  <mark>dist/js</mark> directory alongside the concatenated file.                                
+                </p><strong>Watch Task</strong>
+                <pre><code class="language-javascript">// Watch Files For Changes
+gulp.task('watch', function() {
+    gulp.watch('js/*.js', ['lint', 'scripts']);
+    gulp.watch('scss/*.scss', ['sass']);
+});</code></pre>
+                <p>The <strong>watch</strong> task is used to run tasks as we make changes to our files. As you write code and modify your files, the 
+                  <mark>gulp.watch()</mark> method will listen for changes and automatically run our tasks again so we don't have to continuously jump back to our command-line and run the gulp command each time.
+                </p><strong>Default Task</strong>
+                <pre><code class="language-javascript">// Default Task
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);</code></pre>
+                <p>Finally, we have our <strong>default</strong> task which is used as a grouped reference to our other tasks. This will be the task that is ran upon entering <strong>gulp</strong> into the command line without any additional parameters.</p>
+                <p>Now, all we have left to do is run gulp. Switch back over to your command-line and type:</p>
+                <pre><code class="language-javascript">gulp</code></pre>
+                <p>This will call gulp and run everything we have defined in our default task. So, in other words It’s the same thing as running:</p>
+                <pre><code class="language-javascript">gulp default</code></pre>
+                <p>Additionally, we don’t have to run the <strong>default</strong> task. We could run any of the tasks we defined at any time. Simply call gulp and then specify the task you would like to run directly afterward. For example, we can run our <strong>sass</strong> task manually at any time like so:</p>
+                <pre><code class="language-javascript">gulp sass</code></pre>
+                <p>Pretty cool, eh?</p>
+                <h1>Wrapping Up</h1>
+                <p>Well, we’ve made it. We have survived our tempermental, intern-eating boss and we have heroically saved our lunch buddy. Take a moment to pat yourself on the back. As a quick recap, let’s review what we have learned.</p>
+                <ul>
+                  <li>We learned how to install Node and npm.</li>
+                  <li>We learned about the command-line and how to use it.</li>
+                  <li>We learned how to use npm to install gulp and various plugins.</li>
+                  <li>We learned how to write a gulpfile and run tasks.</li>
+                </ul>
+              </div>
+              <p>It is my hope that this introduction has made understanding build tools much easier and that you can see the real value that gulp adds to your project and your development workflow. If you have any further questions be sure to post them in the comments!
+                <h1>Additional Reading</h1>
+                <p>As always, it is great to have some additional resources, especially on the stuff that we couldn’t cover in detail with this article. So, here are some resources to take you beyond the scope of this article should you choose to go there.</p>
+                <ul>
+                  <li><a href="http://gulpjs.com/">Gulp on the Web</a></li>
+                  <li><a href="http://gulpjs.com/plugins/">Gulp Plugin Search</a></li>
+                  <li><a href="https://github.com/gulpjs/gulp">Gulp on Github</a></li>
+                  <li><a href="https://docs.npmjs.com/files/package.json#dependencies">npm package.json Documentation</a></li>
+                  <li><a href="https://www.amazon.com/Getting-Started-Gulp-Travis-Maynard/dp/1784395765/156-1040861-5863648?ie=UTF8">Getting Started with Gulp on Amazon</a></li>
+                </ul>
+              </p>
+            </article>
+            <!-- social-share-->
+            <section class="social-share">
+              <ul>
+                <li><a href="https://www.facebook.com/sharer.php?u=" class="facebook-share"><span class="cz-facebook"></span> Facebook</a></li>
+                <li><a href="https://twitter.com/intent/tweet?url=&amp;text=&amp;via=&amp;hashtags=" class="twitter-share"><span class="cz-twitter"></span> Twitter</a></li>
+                <li><a href="https://plus.google.com/share?url=" class="google-share"><span class="cz-google-plus"></span> Google +</a></li>
+              </ul>
+            </section>
+            <!-- latest-post-->
+            <section class="latest-post">
+              <article class="post-item">
+                <div class="item-thumb"><img src="assets/img/you-dont-need-javascript-for-that.jpg" alt="You Dont Need JavaScript for That"></div>
+                <div class="item-title">
+                  <h5><a href="#">You Dont Need JavaScript for That !</a></h5><span class="meta-date">POSTED ON <a href="#">13th January 14</a></span>
+                </div>
+              </article>
+              <article class="post-item"> 
+                <div class="item-thumb"><img src="assets/img/learning-react-js-getting-started-and-concepts.jpg" alt="Document an API with Paw"></div>
+                <div class="item-title">
+                  <h5><a href="#">Document an API with Paw</a></h5><span class="mate-date">POSTED ON <a href="#">4th January 14</a></span>
+                </div>
+              </article>
+              <div class="clear"></div>
+            </section>
+            <!-- divider-->
+            <div class="divider"><span class="dashed"></span></div>
+            <!-- article-comment-->
+            <section class="article-comment">
+              <!-- comment-area-->
+              <div class="comment-area">
+                <!-- comment-item-->
+                <div class="comment-item">
+                  <div class="comment-author">
+                    <div class="author-avatar"><img src="http://1.gravatar.com/avatar/a6cd036df680522e33d48bf1344f0f4d?s=84&amp;d=mm&amp;r=g"/></div>
+                    <div class="author-meta"><span>Enes Erdogan</span><a href="">4 Eylül 2016 at 02:07</a><a href="">Reply</a></div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="comment">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s
+                    </p>
+                  </div>
+                </div>
+                <!-- comment-item-->
+                <div class="comment-item comment-sub">
+                  <div class="comment-author">
+                    <div class="author-avatar"><img src="http://1.gravatar.com/avatar/a6cd036df680522e33d48bf1344f0f4d?s=84&amp;d=mm&amp;r=g"/></div>
+                    <div class="author-meta"><span>Enes Erdogan</span><a href="">4 Eylül 2016 at 02:07</a><a href="">Reply</a></div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="comment">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s
+                    </p>
+                  </div>
+                </div>
+                <!-- comment-item-->
+                <div class="comment-item comment-sub">
+                  <div class="comment-author">
+                    <div class="author-avatar"><img src="http://1.gravatar.com/avatar/a6cd036df680522e33d48bf1344f0f4d?s=84&amp;d=mm&amp;r=g"/></div>
+                    <div class="author-meta"><span>Enes Erdogan</span><a href="">4 Eylül 2016 at 02:07</a><a href="">Reply</a></div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="comment">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s
+                    </p>
+                  </div>
+                </div>
+                <!-- comment-item-->
+                <div class="comment-item">
+                  <div class="comment-author">
+                    <div class="author-avatar"><img src="http://1.gravatar.com/avatar/a6cd036df680522e33d48bf1344f0f4d?s=84&amp;d=mm&amp;r=g"/></div>
+                    <div class="author-meta"><span>Enes Erdogan</span><a href="">4 Eylül 2016 at 02:07</a><a href="">Reply</a></div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="comment">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- comment-write-->
+              <div class="comment-write">
+                <form action="" method="POST">
+                  <textarea placeholder="Your comment..." cols="40" row="15"></textarea>
+                  <input type="text" placeholder="Name">
+                  <input type="email" placeholder="Email">
+                  <input type="submit" value="Submit your comment">
+                </form>
+              </div>
+            </section>
+          </main>
+        </div>
+      </div>
+      <!-- footer-->
+      <footer class="general content">
+        <div class="divider"><span class="dashed"></span></div>
+        <div class="footer-text">
+          <p>Nunc quis lacus dictum, viverra dui non, ultrices risus. Nunc id risus non ante dictum pharetra quis non sem. Nullam vestibulum enim at dolor consequat, sed vulputate mauris interdum. Phasellus interdum sem sed laoreet volutpat. Nullam mollis eros eu mi lacinia, non tincidunt enim finibus. Suspendisse tempor tellus dolor, eu feugiat lacus suscipit posuere. </p>
+        </div>
+        <div class="footer-form">
+          <form action="/" method="POST">
+            <input type="email" placeholder="Enter your email adress..." name="formEmail" required>
+            <button type="submit" class="button">Sign me up!</button>
+          </form>
+        </div>
+        <div class="social-area">
+          <ul>
+            <li><a href="#"><span class="cz-facebook"></span></a></li>
+            <li><a href="#"><span class="cz-twitter"></span></a></li>
+            <li><a href="#"><span class="cz-instagram"></span></a></li>
+            <li><a href="#"><span class="cz-google-plus"></span></a></li>
+            <li><a href="#"><span class="cz-behance"></span></a></li>
+            <li><a href="#"><span class="cz-dribbble"></span></a></li>
+            <li><a href="#"><span class="cz-500px"></span></a></li>
+            <li><a href="#"><span class="cz-github"></span></a></li>
+            <li><a href="#"><span class="cz-codepen"></span></a></li>
+            <li><a href="#"><span class="cz-linkedin"></span></a></li>
+          </ul>
+        </div>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js" type="text/javascript"></script>
+      <script type="text/javascript">
+        function LoadJs() {
+            WebFont.load({
+                google: {
+                    families: ['Roboto:400,300:latin-ext,latin,greek-ext,vietnamese,cyrillic-ext,greek,cyrillic']
+                }
+            });
+            var element = document.createElement("script");
+            element.src = "assets/js/app.min.js";
+            document.body.appendChild(element);
+        }
+        if (window.addEventListener)
+        window.addEventListener("load", LoadJs, false);
+        else if (window.attachEvent)
+        window.attachEvent("onload", LoadJs);
+        else window.onload = LoadJs;
+      </script>
+    </div>
+  </body>
+</html>

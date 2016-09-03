@@ -1,2 +1,5 @@
 node_modules
 .idea/ 
+.DS_Store
+dist/assets/child-theme.zip
+dist/child-theme.zip

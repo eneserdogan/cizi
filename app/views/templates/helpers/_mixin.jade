@@ -3,3 +3,35 @@ mixin article(articleTitle)
     article.article--list
         h2
             a(href="article.html",title=articleTitle)=articleTitle
+
+mixin comment(avatar,name,comment,date,sub)
+    // comment-item
+    if sub
+        .comment-item.comment-sub
+            .comment-author
+                .author-avatar
+                    img(src=avatar)
+                .author-meta
+                    span
+                        =name
+                    a(href="")=date
+                    a(href="") Reply
+                .clear
+            .comment
+                p
+                    =comment
+    else
+        .comment-item
+            .comment-author
+                .author-avatar
+                    img(src=avatar)
+                .author-meta
+                    span
+                        =name
+                    a(href="")=date
+                    a(href="") Reply
+                .clear
+            .comment
+                p
+                  =comment
+
