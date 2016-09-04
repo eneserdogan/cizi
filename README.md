@@ -44,6 +44,8 @@ app/
 ├── about.jade
 ├── article.jade
 ├── article-comment.jade
+├── portfolio.jade
+├── portfolio-detail.jade
 ├── category.jade
 ├── contact.jade
 ├── index.jade
@@ -62,6 +64,8 @@ dist/
 ├── about.html
 ├── article.html
 ├── article-comment.html
+├── portfolio.html
+├── portfolio-detail.html
 ├── category.html
 ├── contact.html
 ├── index.html
@@ -174,7 +178,7 @@ $cz-snapchat-ghost         : "\f2ac"          !default;
 - [x] Search
 - [x] Contact
 - [x] 404
-- [ ] Portfolio (Soon)
+- [x] Portfolio
 
 ## Gulp
 
