@@ -34,4 +34,18 @@ mixin comment(avatar,name,comment,date,sub)
             .comment
                 p
                   =comment
+mixin portfolio(picture,name,category)
+    // portfolio-item
+    .portfolio-item
+        .item-preview
+            img(src=picture)
+        a(href="portfolio-detail.html" title=name)
+            .item-hover
+                .hover-info
+                    .project-name
+                        =name
+                    .project-category
+                        =category
+
+
 

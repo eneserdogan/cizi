@@ -1,0 +1,52 @@
+include views/templates/helpers/_mixin
+doctype
+html(lang="en")
+    include views/templates/partials/_head
+    body
+        // container
+        .container
+            // header
+            include views/templates/partials/_header
+            // content
+            .content.main
+                // main-area
+                .main-area
+                    // main
+                    main.home
+                        // content-header
+                        header.content-header
+                            h1.content-title Portfolio : Amnesty International
+                            span.dashed
+                        // content-portfolio
+                        section.portfolio-detail
+                            .portfolio-picture
+                                img(src="assets/img/demo/portfolio-cover-1.jpg")
+                            .portfolio-desc
+                                .project-name Amnesty International
+                                .project-category Newletter Cover
+                                .project-info
+                                    p Denote simple fat denied add worthy little use. As some he so high down am week. Conduct esteems by cottage to pasture we winding. On assistance he cultivated considered frequently. Person how having tended direct own day man. Saw sufficient indulgence one own you inquietude sympathize.
+                                    p Boy favourable day can introduced sentiments entreaties. Noisier carried of in warrant because. So mr plate seems cause chief widen first. Two differed husbands met screened his. Bed was form wife out ask draw. Wholly coming at we no enable. Offending sir delivered questions now new met. Acceptance she interested new boisterous day discretion celebrated.
+                                .project-link
+                                    a(href="#") Go to project !
+                                .project-services
+                                    .services-title Services
+                                    ul
+                                      li Printing
+                                      li Cover
+                                      li Updates
+                                      li Mockup
+                                .project-share
+                                    .services-title Share
+                                    ul
+                                      li
+                                        a(href="http://facebook.com") Facebook
+                                      li
+                                        a(href="http://twitter.com") Twitter
+                                      li
+                                        a(href="http://pinterest.com") Pinterest
+                                      li
+                                        a(href="mailto:eneserdognn@yandex.com") Email
+                            clear
+            // footer
+            include views/templates/partials/_footer

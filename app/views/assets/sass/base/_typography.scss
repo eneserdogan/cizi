@@ -201,7 +201,6 @@ article{
   @include clearfix();
 }
 
-
 span{
   &.dashed{
     @include dashed();

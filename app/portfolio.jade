@@ -1,0 +1,34 @@
+include views/templates/helpers/_mixin
+doctype
+html(lang="en")
+    include views/templates/partials/_head
+    body
+        // container
+        .container
+            // header
+            include views/templates/partials/_header
+            // content
+            .content.main
+                // main-area
+                .main-area
+                    // main
+                    main.home
+                        // content-header
+                        header.content-header
+                            h1.content-title Portfolio
+                            span.dashed
+                        // content-profile
+                        section.content-profile.portfolio-desc
+                            .bio-wrap
+                                p   Our everyday work is presented here, we do what we love, Case studies, video presentations and photo-shootings below.
+                        // content-portfolio
+                        section.content-portfolio
+                            +portfolio("assets/img/demo/portfolio-cover-2.jpg","Photography")
+                            +portfolio("assets/img/demo/portfolio-cover-3.jpg","Amnesty International","Digital Art")
+                            +portfolio("assets/img/demo/portfolio-cover-4.jpg","Mjölk Books","Print")
+                            +portfolio("assets/img/demo/portfolio-cover-5.jpg","Too Good To Be Buried","Digital Art, Print")
+                            +portfolio("assets/img/demo/portfolio-cover-6.jpg","Multi Color","Digital Art")
+                            +portfolio("assets/img/demo/portfolio-cover-7.jpg","Howdy Owls","Furniture")
+                            .clear
+            // footer
+            include views/templates/partials/_footer

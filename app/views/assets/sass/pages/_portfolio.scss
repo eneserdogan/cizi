@@ -1,0 +1,206 @@
+/**
+ * ----------------------------------------------------------------------------------------
+ * Portfolio Styles
+ * ----------------------------------------------------------------------------------------
+ */
+
+.portfolio-desc{
+  margin-bottom: 50px !important;
+  @media only screen and(max-width: $mobile-size){
+    margin-bottom: 0 !important;
+  }
+}
+
+section{
+  &.content-portfolio{
+    @media only screen and(max-width: $mobile-size){
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .portfolio-item{
+      float: left;
+      width:47%;
+      margin-top: 20px;
+      position: relative;
+      background: #d8d8d8;
+      @include transition();
+      &:nth-child(1),&:nth-child(2){
+        margin-top: 0;
+      }
+      &:nth-child(2n){
+        margin-left: 3%;
+      }
+      &:hover{
+        .item-hover{
+          opacity: .9;
+          visibility: visible;
+          @include transition();
+        }
+      }
+      @media only screen and(max-width: $mobile-size){
+        width: 100%;
+        &:nth-child(1),&:nth-child(2){
+          margin-top:20px;
+        }
+        &:nth-child(2n){
+          margin-left: 0%;
+        }
+      }
+      .item-preview{
+        img{
+          width: 100%;
+          height: 215px;
+          display: block;
+          @media only screen and(max-width: $mobile-size){
+            height:auto;
+          }
+        }
+      }
+      .item-hover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 15px;
+        padding: 20px;
+        background: $portfolio-hover-bg-color;
+        color:$portfolio-hover-color;
+        opacity:0;
+        visibility: hidden;
+        @include transition();
+        &:hover{
+          .hover-info{
+            .project-name{
+              opacity: 1;
+              @include transition(all .3s 75ms cubic-bezier(.455,.03,.515,.955));
+              @include transform(translate(0,0));
+            }
+            .project-category{
+              opacity: 1;
+              @include transition(all .15s cubic-bezier(.455,.03,.515,.955));
+              @include transform(translate(0,0));
+            }
+          }
+        }
+        .hover-info{
+          position: absolute;
+          bottom: 15px;
+          .project-name{
+            font-size:19px;
+            font-weight: 400;
+            opacity: 0;
+            @include transform(translate(0,15px));
+          }
+          .project-category{
+            font-size:14px;
+            font-weight: 400;
+            opacity: 0;
+            margin-top: -5px;
+            @include transform(translate(0,15px));
+          }
+        }
+      }
+    }
+  }
+
+  &.portfolio-detail{
+    @media only screen and(max-width: $mobile-size){
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .portfolio-picture{
+      img{
+        width: 100%;
+      }
+    }
+    .portfolio-desc{
+      .project-name{
+        font-weight: 400;
+        font-size:26px;
+        color:#333333;
+      }
+      .project-category{
+        font-size:16px;
+        font-weight: 400;
+        color:#898989;
+        margin-bottom: 20px;
+      }
+      .project-info{
+        p{
+          font-size:16px;
+          font-weight: 400;
+          color:#898989;
+          line-height: 21px;
+        }
+      }
+      .services-title{
+        font-weight: 400;
+        font-size:18px;
+        color:#333333;
+      }
+      .project-services{
+        margin-top: 50px;
+        ul{
+          padding: 0;
+          margin: 0;
+          overflow: hidden;
+          li{
+            list-style-type: none;
+            font-size:16px;
+            font-weight: 400;
+            color:#898989;
+          }
+        }
+      }
+      .project-link{
+        a{
+          font-weight: 600;
+          font-size:16px;
+          color:#898989;
+        }
+      }
+      .project-share{
+        margin-top: 30px;
+        ul{
+          padding: 0;
+          margin: 0;
+          overflow: hidden;
+          li{
+            display: inline-block;
+            margin-right: 10px;
+            a{
+              font-size:15px;
+              font-weight: 400;
+              color:#898989;
+
+              &[href*="facebook.com"] {
+                &:hover {
+                  color: $facebook-color;
+                }
+              }
+
+              &[href*="twitter.com"] {
+                &:hover {
+                  color: $twitter-color;
+                }
+              }
+
+              &[href*="pinterest.com"] {
+                &:hover {
+                  color: $pinterest-color;
+                }
+              }
+              &[href*="mailto:"] {
+                &:hover {
+                  color: $github-color;;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
