@@ -20,7 +20,16 @@ html(lang="en")
                         // content-portfolio
                         section.portfolio-detail
                             .portfolio-picture
-                                img(src="assets/img/demo/portfolio-cover-1.jpg")
+                               // swiper-container
+                               .swiper-container.portfolio-slider
+                                   .swiper-wrapper
+                                       .swiper-slide
+                                           img(src="assets/img/demo/portfolio-cover-1.jpg")
+                                       .swiper-slide
+                                           img(src="assets/img/demo/portfolio-cover-1.jpg")
+                                       .swiper-slide
+                                           img(src="assets/img/demo/portfolio-cover-1.jpg")
+                                   .swiper-pagination
                             .portfolio-desc
                                 .project-name Amnesty International
                                 .project-category Newletter Cover

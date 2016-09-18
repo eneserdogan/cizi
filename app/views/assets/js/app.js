@@ -26,3 +26,17 @@ window.addEventListener("scroll", function(){
   }
   LastScroll = Statement;
 }, false);
+
+/**
+ *
+ * Portfolio Slider
+ *
+ */
+
+var PortfolioSiingle= new Swiper('.portfolio-slider', {
+  pagination: '.swiper-pagination',
+  paginationClickable: true,
+  spaceBetween: 0,
+  loop:true,
+  autoplay:4000
+});

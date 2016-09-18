@@ -96,7 +96,7 @@ gulp.task('style',function(){
 
 
 gulp.task('scripts',function(){
-    return gulp.src('app/views/assets/js/**/*.js')
+    return gulp.src(['app/views/assets/js/3rd/**/*.js','app/views/assets/js/app.js'])
         .pipe(notify({
             "title": "Scripts Task",
             "message": "Processing JS File: <%= file.relative %> | <%= options.date %>",
@@ -143,10 +143,10 @@ gulp.task('server',function(){
  */
 
 gulp.task('zip',function(){
-   return gulp.src('dist/**')
-       .pipe(zip('child-theme.zip'))
-       .pipe(chmod(777))
-       .pipe(gulp.dest('./'));
+    return gulp.src('dist/**')
+        .pipe(zip('child-theme.zip'))
+        .pipe(chmod(777))
+        .pipe(gulp.dest('./'));
 });
 
 

@@ -106,4 +106,15 @@ footer{
       }
     }
   }
+  .copyright-area{
+    text-align: center;
+    font-size:14px;
+    p{
+      padding-top: 30px;
+      border-top:1px solid #efefef;
+    }
+    a{
+      border-bottom: 1px solid $body-link-hover-color;
+    }
+  }
 }

@@ -23,12 +23,18 @@ html(lang="en")
                                 p   Our everyday work is presented here, we do what we love, Case studies, video presentations and photo-shootings below.
                         // content-portfolio
                         section.content-portfolio
-                            +portfolio("assets/img/demo/portfolio-cover-2.jpg","Photography")
+                            +portfolio("assets/img/demo/portfolio-cover-2.jpg","Jameden Nove","Photography")
                             +portfolio("assets/img/demo/portfolio-cover-3.jpg","Amnesty International","Digital Art")
                             +portfolio("assets/img/demo/portfolio-cover-4.jpg","Mjölk Books","Print")
                             +portfolio("assets/img/demo/portfolio-cover-5.jpg","Too Good To Be Buried","Digital Art, Print")
                             +portfolio("assets/img/demo/portfolio-cover-6.jpg","Multi Color","Digital Art")
                             +portfolio("assets/img/demo/portfolio-cover-7.jpg","Howdy Owls","Furniture")
                             .clear
+                        // pagination
+                        nav.pagination
+                            ul
+                                each items in[1,2,3,4,5,"NEXT"]
+                                  li
+                                    a(href="#")=items
             // footer
             include views/templates/partials/_footer

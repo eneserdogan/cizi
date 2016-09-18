@@ -18,6 +18,10 @@ section{
     .profile-wrap{
       display: inline-block;
       position: relative;
+      .about-avatar{
+        width: 160px  !important;
+        height: 160px !important;
+      }
       .author-avatar{
         height: 130px;
         width: 130px;
