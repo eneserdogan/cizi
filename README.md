@@ -1,7 +1,7 @@
 
 <img src="cizi-cover_.png" width="400">
-# Cizi <a href="https://eneserdogan.github.io/cizi/dist/"><img src="https://img.shields.io/badge/live-preview-lightgrey.svg" /></a>
-Clean And Minimalistic Personel Blog Theme. Jekyll version coming soon !
+# Cizi <a href="https://cizi.surge.sh"><img src="https://img.shields.io/badge/live-preview-lightgrey.svg" /></a>
+Clean And Minimalistic Personel Blog Theme.
 
 ### Some Features
 - Lightweight / easy on customize
